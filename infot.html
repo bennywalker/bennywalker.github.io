@@ -99,8 +99,129 @@ code { background-color: rgb(12, 0, 0); color: rgb(64, 255, 0); }
     <div></div>
     <h3>INFOTC 1040</h3>
     <p>My final profect for INFOTC 1040 is pretty cool. It essentially requries me to write code that collects data from a file and organizes the information. This project makes me feel like im going to Wall Street.</p>
-    <h4>Code I have so far</h4>
-    <p>[Insert Code]</p>
+    <h4>Code from Midterm</h4>
+    <p><pre><code>
+import csv
+print("The assigned file for you is called credit_card_2020.csv")
+def collect_data():
+    data_list = []
+    print("You will be prompted multiple times for the file name for security.")
+    while(True):
+        try:
+            file_name = input("Enter the name of the file you want a receipt for: ")
+            with open(file_name) as file:
+                data = csv.reader(file, delimiter =',')
+                for row in data:
+                    data_list.append(row)
+                return data_list
+        except Exception as error:
+            print(error)
+        else:
+            break
+
+def use_data(data):
+    merchandise = []
+    merchandise_purchases = 0
+    merchandise_total_cost = 0
+    dining = []
+    dining_purchases = 0
+    dining_total_cost = 0
+    health = []
+    health_purchases = 0
+    health_total_cost = 0
+    other = []
+    other_purchases = 0
+    other_total_cost = 0
+    average_cost = 0
+    total_cost = 0
+    total_purchases = 0
+    purchase_types = []
+    purchase_costs = []
+
+    for items in data:
+        purchase_types.append(items[0])
+        purchase_costs.append(float(items[1]))
+        total_purchases += 1
+        total_cost += float(items[1])
+
+        if items[0] == 'Merchandise':
+            merchandise.append(float(items[1]))
+
+        elif items[0] == 'Dining':
+            dining.append(float(items[1]))
+
+        elif items[0] == 'Health Care':
+            health.append(float(items[1]))
+
+        elif items[0] == 'Other' or 'Other Services':
+
+            other.append(float(items[1]))
+
+        else:
+            other.append(float(items[1]))
+
+    merchandise_purchases = len(merchandise)
+    merchandise_total_cost = round(sum(merchandise), 2)
+    dining_purchases = len(dining)
+    dining_total_cost = round(sum(dining), 2)
+    health_purchases = len(health)
+    health_total_cost = round(sum(health), 2)
+    other_purchases = len(other)
+    other_total_cost = round(sum(other), 2)
+    total_cost = round(total_cost, 2)
+    average_cost = round(total_cost / total_purchases, 2)
+    largest_purchase = max(purchase_costs)
+    largest_purchase_type = purchase_types[purchase_costs.index(largest_purchase)]
+    smallest_purchase = min(purchase_costs)
+    smallest_purchase_type = purchase_types[purchase_costs.index(smallest_purchase)]
+    print("")
+    print("# of Purchases for Merchandise:", merchandise_purchases)
+    print("Merchandise Toatal:", "${:,.2f}".format(merchandise_total_cost))
+    print("")
+    print("# of Purchases for Dining:", dining_purchases)
+    print("Dining Total:", "${:,.2f}".format(dining_total_cost))
+    print("")
+    print("# of Purchases for Health:", health_purchases)
+    print("Health Total:", "${:,.2f}".format(health_total_cost))
+    print("")
+    print("# of Purchases for Other:", other_purchases)
+    print("Other Total:", "${:,.2f}".format(other_total_cost))
+    print("")
+    print("# of Purchases: ", total_purchases)
+    print("Total: ", "${:,.2f}".format(total_cost))
+    print("")
+    print("Average Purchase:", "${:,.2f}".format(average_cost))
+    print("")
+    print("Largest Purchase: ", "${:,.2f}".format(largest_purchase), "Category:", largest_purchase_type)
+    print("Smallest Purchase: ", "${:,.2f}".format(smallest_purchase), "Category:", smallest_purchase_type)
+    print("")
+
+def main():
+    status = True
+    while(status):
+        collect_data()
+        data = collect_data()
+        use_data(data)
+        while(True):
+            try:
+                try_again = input("Would you like a receipt of another file? (y/n): ")
+                if (try_again == "y"):
+                    status = True
+                    break
+                elif (try_again == "n"):
+                    status = False
+                    print("Have a good day. ")
+                    exit()
+                    break
+                else:
+                    print("Please enter 'y' or 'n' only. Try again.")
+                    continue
+            except ValueError:
+                print("Input was not a string value. Try again.")
+
+main()
+
+    </code></pre></p>
     <div></div>
     <a href="main.html"><i>Last Page</a>
     <a href="main.html"><i>Home</a>
