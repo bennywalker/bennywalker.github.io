@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+
+body {
+    background-color: aqua;
+}
+code { background-color: rgb(12, 0, 0); color: rgb(64, 255, 0); }
+</style>
+    <h1><b>INFOTC 1000 and INFOTC 1040</b></h1>
+    <h2>The Final Projects</h2>
+    <p>I decided to combine both of my INFOTC classes into 1 page.</p>
+    <div></div>
+    <h3>INFOTC 1000</h3>
+    <p>My final project for INFOTC 1000 is this project. This is pretty meta.</p>
+    <div></div>
+    <h4>My sample code from Midterm:</h4>
+    <pre><code>import math
+
+        def cone_calculator ():
+        
+        while True:
+            try:
+                r=float(input("What is the radius? "))
+                if r < 0:
+                     print("Input must be a POSITIVE integer. Try again. ")
+                elif r > 0:
+                    r=r+0
+                    break
+            except (ValueError):
+                print("Input must be a positive INTEGER. Try again. ")
+        
+        while True:
+            try:
+                h=float(input("What is the height? "))
+                if h < 0:
+                    print("Input must be a POSITIVE integer. Try again.  ")
+                elif h > 0:
+                    h=h+0
+                    break
+            except (ValueError):
+                print("Input must be a positive INTEGER. Try again. ")
+        
+        volume_cone=math.pi*r*r*h/3
+        print("The volume of your cone is:", str(volume_cone))
+        input_2()
+        def cylinder_calculator ():
+        
+        while True:
+            try:
+                 r = float(input("What is the radius? "))
+                 if r < 0:
+                    print("Input must be a POSITIVE integer. Try again. ")
+                 elif r > 0:
+                    r = r + 0
+                    break
+            except (ValueError):
+                print("Input must be a positive INTEGER. Try again. ")
+        
+        while True:
+            try:
+                h = float(input("What is the height? "))
+                if h < 0:
+                    print("Input must be a POSITIVE integer. Try again.  ")
+                elif h > 0:
+                    h = h + 0
+                    break
+            except (ValueError):
+                print("Input must be a positive INTEGER. Try again. ")
+        volume_cone = math.pi * r * r * h
+        print("The volume of your cylinder is:", str(volume_cone))
+        input_2()
+        def cube_calculator ():
+        
+        while True:
+            try:
+                 s = float(input("What is the length of one side? "))
+                 if s < 0:
+                    print("Input must be a POSITIVE integer. Try again. ")
+                 elif s > 0:
+                    s = s + 0
+                    break
+            except (ValueError):
+                print("Input must be a positive INTEGER. Try again. ")
+        
+        volume_cube = s * s * s
+        print("The volume of your cube is:", str(volume_cube))
+        input_2()
+        def calculator_selector (): while True: i = input("What would you like to calculate? Type 'cone' 'cylinder' or 'cube' ") if i == 'cone': cone_calculator() elif i == 'cylinder': cylinder_calculator() elif i == 'cube': cube_calculator() break else: print("Input must be either 'cone' cylinder' or cube'. Try again")
+        
+        def start_input (): start=input("Hello user. Type 'y' if you would like to perform a calculation. ") if start== 'y': calculator_selector () else: print("Ok. Have a good day. ") exit()
+        
+        def input_2 (): a = input("Type 'y' if you would like to make another calculation. ") if a == 'y': calculator_selector() else: print("Have a good day. ") exit()
+        
+        start_input()]</code></pre>
+    <a href="https://github.com/bennywalker/INFOTC1000">Link to my Midterm Project</a>
+    <a href="main.html">Link to my Final Project</a>
+    <div></div>
+    <h3>INFOTC 1040</h3>
+    <p>My final profect for INFOTC 1040 is pretty cool. It essentially requries me to write code that collects data from a file and organizes the information. This project makes me feel like im going to Wall Street.</p>
+    <h4>Code I have so far</h4>
+    <p>[Insert Code]</p>
+    <div></div>
+    <a href="main.html"><i>Last Page</a>
+    <a href="main.html"><i>Home</a>
+    <a href="hist.html"><i>Next Page</a>
+</head>
+</html>
